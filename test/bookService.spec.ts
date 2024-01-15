@@ -1,8 +1,7 @@
-import { describe, expect, test } from "bun:test";
+import { expect, test } from "bun:test";
 
 import { BookAPIAgent } from '../src/agents/bookAPIAgent';
 import { BookService } from '../src/services/bookService';
-
 
 test('BookService should be defined', () => {
   const bookService = new BookService(new BookAPIAgent());
