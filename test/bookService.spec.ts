@@ -2,6 +2,8 @@ import { expect, test } from "bun:test";
 
 import { BookAPIAgent } from '../src/agents/bookAPIAgent';
 import { BookService } from '../src/services/bookService';
+import { FakeBookAPIAgent } from "./agents/fakeBookAPIAgent";
+import { BookFactory } from "./factory/BookFactory";
 
 /*
  * BookAPIAgent tests
@@ -23,19 +25,23 @@ test('BookService should return a book', () => {
   const bookService = new BookService(new BookAPIAgent());
 
   expect(bookService.findBook('tdd')).toEqual({ name: "Test Driven Development" })
-})
+});
 
+/*
+ * BookAPIAgent tests
+ *
+*/
 test('BookAPIAgent should be defined', () => {
   const bookAPIAgent = new BookAPIAgent();
 
   expect(bookAPIAgent).toBeDefined();
-})
+});
 
 test('BookAPIAgent should has getBook method', () => {
   const bookAPIAgent = new BookAPIAgent();
 
   expect(bookAPIAgent.getBook).toBeDefined();
-})
+});
 
 test('BookAPIAgent should return a book', () => {
   const bookAPIAgent = new BookAPIAgent();
